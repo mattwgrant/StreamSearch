@@ -11,6 +11,9 @@ $(document).on "page:change", ->
 
   $("#begin").click ->
     $("#searchby").show()
+
+  $("#begin").click ->
+    $("#search-symbol").show()
     
   $("#begin").click ->
     $("#begin").hide()

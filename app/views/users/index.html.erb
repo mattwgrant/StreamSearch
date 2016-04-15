@@ -1,14 +1,76 @@
 <h1 id="welcome">Welcome to StreamSearch</h1>
 <h1 id="searchby">StreamSearch</h1>
 <div id="main">
-  <h3>Search Spotify, Apple Music, Google Play, and Rhapsody to find the music that you are looking for!</h3>
+  <h3>Search Spotify, Apple Music, and Rhapsody to find the music that you are looking for!</h3>
 </div>
 <div id="search-instructions">
   <h3>Search by Artist, Album, or Song</h3>
 </div>
 
 <button id="begin">Click to Begin</button>
-<%#= link_to "Click to Begin", "#", id: "begin" %> 
-<input id="search-bar" name="user[name]" type="search" value="Artist, Album, Song" />
-<!-- <i class="fa fa-search" aria-hidden="true"></i> -->
+
+<div id="search-bar">
+
+  <%= form_tag "/search" do %>
+    <%= text_field_tag :query %>
+    <%= submit_tag %>
+  <% end %>
+</div>
+
+<div class="results">
+  <div class="spotifyResults">
+    <div id="spotify">
+      <strong>Spotify:</strong>
+    </div>
+      <% if @spotResults %>
+        <% @spotResults["tracks"]["items"].each do |spotResult| %>
+          <ul>
+            <li>Song: "<%= spotResult["name"]%>"</li>
+            <li>Album: <%= spotResult ["album"]["name"] %></li>
+            <li>Artist: <%= spotResult["name"] %></li>
+            
+          </ul>
+        <% end %>
+      <% end %>
+  </div>
+
+  
+  <div class="appleResults">
+    <div id="apple">
+      <strong>Apple Music:</strong>
+    </div>
+      <% if @results %>
+        <% @results.each do |result| %>
+          <p><%#= result["artistName"] %></p>
+          <p><%#= result["collectionName"] %> <%#= result["artistName"] %> <%#= result["trackCount"] %></p>
+          <ul>  
+            <li>Song: "<%= result["trackName"] %>"</li>
+            <li>Album: <%= result["collectionName"] %></li>
+            <li>Artist: <%=result["artistName"] %></li>
+          </ul>
+
+        <% end %>
+      <% end %>
+  </div>
+
+  <div class="rhapResults">
+    <div id="rhapsody">
+      <strong>Rhapsody:</strong>
+    </div>
+      <% if @rhapResults %>
+        <% @rhapResults.each do |rhapResult| %>
+          <p><%#= rhapResult["name"] %></p>
+          <p><%#= rhapResult["name"] %> <!-- Artist: --> <%#= rhapResult["artist"]["name"] %></p>
+          <ul>
+            <li>Song: "<%= rhapResult["name"] %>"</li>
+            <li>Album: <%= rhapResult["album"]["name"] %></li> 
+            <li>Artist: <%= rhapResult["artist"]["name"] %></li>
+          </ul>
+        <%# else %>
+       <!--    <p>Sorry, we were unable to locate any results</p> -->
+        <% end %>
+      <% end %>
+  </div>
+</div>
+
 
