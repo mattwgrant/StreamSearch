@@ -27,7 +27,7 @@
           <ul>
             <li>Song: "<%= spotResult["name"]%>"</li>
             <li>Album: <%= spotResult ["album"]["name"] %></li>
-            <li>Artist: <%= spotResult["name"] %></li>
+            <li>Artist: <%= spotResult["artists"][0]["name"] %></li>
             
           </ul>
         <% end %>
