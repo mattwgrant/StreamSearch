@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def search
     @results = Apis::Itunes.search(params[:query])
+    
     @rhapResults = Apis::Rhapsody.search(params[:query])
     @spotResults = Apis::Spotify.search(params[:query])
 
