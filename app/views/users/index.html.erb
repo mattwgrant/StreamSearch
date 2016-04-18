@@ -18,58 +18,103 @@
 </div>
 
 <div class="results">
-  <div class="spotifyResults">
-    <div id="spotify">
-      <strong>Spotify:</strong>
-    </div>
-      <% if @spotResults %>
-        <% @spotResults["tracks"]["items"].each do |spotResult| %>
-          <ul>
-            <li>Song: "<%= spotResult["name"]%>"</li>
-            <li>Album: <%= spotResult ["album"]["name"] %></li>
-            <li>Artist: <%= spotResult["artists"][0]["name"] %></li>
-            <li><%#= spotResult ["images"]["url"] %></li>
-            
-          </ul>
-        <% end %>
-      <% end %>
-  </div>
+  <div id="spotty">
+    <div class="spotifyResults">
+      <div id="spotify">
+        <strong>Spotify:</strong>
+      </div>
+    </div><br><br><br>
+     <!--    <%# if @spotResults %>
+          <%# @spotResults["tracks"]["items"].each do |spotResult| %>
+            <ul>
+              <li>Song: "<%#= spotResult["name"]%>"</li>
+              <li>Album: <%#= spotResult ["album"]["name"] %></li>
+              <li>Artist: <#%= spotResult["artists"][0]["name"] %></li>
+              <li><%#= spotResult ["images"]["url"] %></li>
+              
+            </ul>
+          <%# end %>
+        <%# end %> -->
+      <div class="spotifyResults">
+        <% if @spotResults %>
+          <% @spotResults["artists"]["items"].each do |spotResult| %>
+            <ul>
+              <li id="spotDisplay"><%= spotResult["name"] %> </li>
+              <li>
+              <a href="/albums/<%= spotResult["id"] %>">Albums</a>
+            <!--   <a href="https://api.spotify.com/v1/artists/<%#= spotResult["id"] %>/albums">Albums</a> -->
+              </li>
+              <!-- goal: display each albums title per artist -->
+                  <!-- show page: link takes you to a page where you see all the albums from that artist, and we have artist id available -->
 
-  
-  <div class="appleResults">
-    <div id="apple">
-      <strong>Apple Music:</strong>
+
+                  <!-- params: artist id,
+                  new link: goes to show page, which displays all album info 
+                      q: how do we get user to show page that is individual to each artist? 
+                      the link to the show page is set up how? 
+
+                  get ==> show page
+                          in controller, set some instance variable to be the result of getting <a href="https://api.spotify.com/v1/artists/<%#= spotResult["id"] %>/albums">Albums</a> -->
+
+
+              <%# if spotResult["images"][0] %>
+            <!--   <li><%#= image_tag spotResult["images"][0]["url"], :class => "artist_img" %></li>
+              <%# else %>
+              <li><%#= image_tag "missingperson.png", :class => "artist_img" %> </li> -->
+              
+             <!--  <li> <img src='<%#=spotResult["images"][0]["url"] %>'></li> -->
+              <%# end %>
+
+            </ul>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-      <% if @results%>
-        <% @results.each do |result| %>
-        <%if result["isStreamable"] == true%>
-          <p><%#= result["artistName"] %></p>
-          <p><%#= result["collectionName"] %> <%#= result["artistName"] %> <%#= result["trackCount"] %></p>
-          <ul>  
-            <li>Song: "<%= result["trackName"] %>"</li>
-            <li>Album: <%= result["collectionName"] %></li>
-            <li>Artist: <%=result["artistName"] %></li>
+
+  <div id="appy">
+    <div class="appleResults">
+      <div id="apple">
+        <strong>Apple Music:</strong>
+      </div>
+    </div><br><br><br>
+      <div class="appleResults">
+        <% if @results %>
+          <% @results.each do |result| %>
+          <ul>
+          <%# if result["isStreamable"] == true%>
+            <li id="spotDisplay"><%= result["artistName"] %></li>
+           <!--  <p><%#= result["collectionName"] %> <%#= result["artistName"] %> <%#= result["trackCount"] %></p>
+            <ul>  
+              <li>Song: "<%#= result["trackName"] %>"</li>
+              <li>Album: <%#= result["collectionName"] %></li>
+              <li>Artist: <%#=result["artistName"] %></li>
+            </ul> -->
+            <%# end %>
           </ul>
           <% end %>
         <% end %>
-      <% end %>
-  </div>
+      </div>
+    </div>
 
   <div class="rhapResults">
     <div id="rhapsody">
       <strong>Rhapsody:</strong>
     </div>
+  </div><br><br><br>
+  <div class="rhapResults">
       <% if @rhapResults %>
         <% @rhapResults.each do |rhapResult| %>
-          <p><%#= rhapResult["name"] %></p>
-          <p><%#= rhapResult["name"] %> <!-- Artist: --> <%#= rhapResult["artist"]["name"] %></p>
-          <ul>
-            <li>Song: "<%= rhapResult["name"] %>"</li>
-            <li>Album: <%= rhapResult["album"]["name"] %></li> 
-            <li>Artist: <%= rhapResult["artist"]["name"] %></li>
-          </ul>
+        <ul>
+          <li id="spotDisplay"><%= rhapResult["name"] %></li>
+          <li><%#= rhapResult["name"] %> <!-- Artist: --> <%#= rhapResult["artist"]["name"] %></li>
+         <!--  <ul>
+            <li>Song: "<%#= rhapResult["name"] %>"</li>
+            <li>Album: <%#= rhapResult["album"]["name"] %></li> 
+            <li>Artist: <%#= rhapResult["artist"]["name"] %></li>
+          </ul> -->
         <%# else %>
        <!--    <p>Sorry, we were unable to locate any results</p> -->
+        </ul>
         <% end %>
       <% end %>
   </div>

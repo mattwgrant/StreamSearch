@@ -9,7 +9,7 @@ class Apis::Rhapsody
     song = "#{@@url}/v1/search/typeahead?apikey=OTNkNjM2YzAtZGIxMC00ZTg4LWJjNjItMWJhOWZiYTk4MTVl&q=#{query}&type=track"
     # get_response url
     # get_response album
-    get_response song
+    get_response url
   end
 
   # def self.lookup term, key = "id", *args

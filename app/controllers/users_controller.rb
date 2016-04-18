@@ -15,18 +15,20 @@ class UsersController < ApplicationController
   end
 
   def search
-    @results = Apis::Itunes.search(params[:query])
-    
-    @rhapResults = Apis::Rhapsody.search(params[:query])
     @spotResults = Apis::Spotify.search(params[:query])
+    @results = Apis::Itunes.search(params[:query])
+    @rhapResults = Apis::Rhapsody.search(params[:query])
+    
 
     render "index"
   end
 
 
-
-
   def show
-
+    @spotAlbums = Apis::Spotify.lookup(params[:id])
+    @itunesAlbums = Apis::Itunes.lookup(params[:id])
+    @rhapAlbums = Apis::Rhapsody.lookup(params[:id])
+    # @albums = "#{@@url}/v1/artist/#{key}/albums"
+    # @albums ="#{@@url}/v1/artists/" + params[:id] + "/albums"
   end
 end

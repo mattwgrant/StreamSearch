@@ -6,11 +6,12 @@ class Apis::Itunes
   def self.search term, entity = "", *args
     url = "#{@@url}/search?term=#{term}&entity=musicArtist"
     album = "#{@@url}/search?term=#{term}&entity=album"
+    # album = 
     song = "#{@@url}/search?term=#{term}&entity=song"
     
     get_response url
-    get_response album
-    get_response song
+    # get_response album
+    # get_response song
   end
 
   def self.get_response url
