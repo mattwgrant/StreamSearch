@@ -13,7 +13,8 @@ class Apis::Spotify
 
   def self.lookup id
     # term, key = "id", *args
-    album = "#{@@url}/v1/artists/#{id}/albums"
+    album = "#{@@url}/v1/artist/#{id}/albums"
+    # tracks = "#{@@url}/v1/albums/#{id}/tracks"
     get_response album
   end
 

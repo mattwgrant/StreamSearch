@@ -7,11 +7,7 @@ require "#{Rails.root}/lib/apis/rhapsody"
 class UsersController < ApplicationController
 
   def index
-   #  if params[:artist_name]
-   #    @artist = RSpotify::Artist.search(params[:artist_name])
-   # # else
-   #  #   redirect_to root_path 
-   #  end
+  
   end
 
   def search
@@ -26,9 +22,8 @@ class UsersController < ApplicationController
 
   def show
     @spotAlbums = Apis::Spotify.lookup(params[:id])
-    @itunesAlbums = Apis::Itunes.lookup(params[:id])
-    @rhapAlbums = Apis::Rhapsody.lookup(params[:id])
-    # @albums = "#{@@url}/v1/artist/#{key}/albums"
-    # @albums ="#{@@url}/v1/artists/" + params[:id] + "/albums"
+    # @itunesAlbums = Apis::Itunes.lookup(params[:id])
+    # @rhapAlbums = Apis::Rhapsody.lookup(params[:id])
+    
   end
 end

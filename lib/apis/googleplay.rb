@@ -1,27 +1,45 @@
-require 'net/http'
-require 'json'
+<div id="appy">  
+  <div class="appleResults">
+    <div id="apple">
+      <strong>Apple Music</strong>
+    </div>
+  </div><br><br><br>
 
-class Google
-  @@url = "https://play.google.com/"
-  def self.search query, type = "", *args
-    url = "#{@@url}/store/search?q=#{query}&c=artist"
-    get_response url
-  end
+    <div class="appleResults">
+      <% if @itunesAlbums %>
+        <% @itunesAlbums.each do |itunesAlbum| %>
+          <%# spotAlbum["available_markets","US"] %>
+            <ul> 
+              <li><%= itunesAlbum["collectionName"] %></li>
+              <li><%#= image_tag itunesAlbum["images"][0]["url"], :class => "album_art" %></li>
 
-  # def self.lookup term, key = "id", *args
-  #   url = "#{@@url}search?#{key}=#{term}"
-  #   get_response url
-  # end
+            </ul>
+          <%# end %>
+        <% end %>
+      <% end %>
+    </div>
+</div>
 
-  def self.get_response url
-    uri = URI(url)
-    response = Net::HTTP.get(uri)
-    parsed = JSON.parse(response)
-     # return parsed["artists"]
-    # byebug
-
-
-
-  end
-  private_class_method :get_response
-end
+<div class="rhapResults">
+    <div id="rhapsody">
+      <strong>Rhapsody</strong>
+    </div>
+  </div><br><br><br>
+  <div class="rhapResults">
+      <% if @rhapAlbums %>
+        <% @rhapAlbums.each do |rhapAlbum| %>
+        <ul>
+          <li id="spotDisplay"><%= rhapAlbum["name"] %></li>
+          <li><%#= rhapResult["name"] %> <!-- Artist: --> <%#= rhapResult["artist"]["name"] %></li>
+         <!--  <ul>
+            <li>Song: "<%#= rhapResult["name"] %>"</li>
+            <li>Album: <%#= rhapResult["album"]["name"] %></li> 
+            <li>Artist: <%#= rhapResult["artist"]["name"] %></li>
+          </ul> -->
+        <%# else %>
+       <!--    <p>Sorry, we were unable to locate any results</p> -->
+        </ul>
+        <% end %>
+      <% end %>
+  </div>
+</div>
