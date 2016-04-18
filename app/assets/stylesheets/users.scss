@@ -1,9 +1,7 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-/*body {
-  background-color: green;
-}*/
+
 
 body {
   background-color: #AEC3B0;
@@ -76,35 +74,59 @@ h3 {
 
 .spotifyResults {
   float: left;
-  width: 400px;
-  margin-left: 30px;
+  width: 385px;
+  margin-left: 15px;
+  padding: 5px;
+  border: 1px solid #124559;
+  box-shadow:  -1px 1px #124559,
+       -2px 2px #124559,
+       -3px 3px #124559,
+       -4px 4px #124559,
+       -5px 5px #124559;
 }
 
 #spotify {
   margin-left: none;
   font-size: 20px;
+  text-shadow: 2px 2px #EFF6E0 ;
 }
 
 .appleResults {
   float: left;
-  width: 400px;
+  width: 385px;
   margin-left: 15px;
+  padding: 5px;
+  border: 1px solid #124559;
+  box-shadow:  -1px 1px #124559,
+       -2px 2px #124559,
+       -3px 3px #124559,
+       -4px 4px #124559,
+       -5px 5px #124559;
 }
 
 #apple {
   margin-left: none;
   font-size: 20px;
+  text-shadow: 2px 2px #EFF6E0;
 }
 
 .rhapResults {
   float: left;
-  width: 400px;
+  width: 385px;
   margin-left: 15px;
+  padding: 5px;
+  border: 1px solid #124559;
+  box-shadow:  -1px 1px #124559,
+       -2px 2px #124559,
+       -3px 3px #124559,
+       -4px 4px #124559,
+       -5px 5px #124559;
 }
 
 #rhapsody {
   margin-left: none;
   font-size: 20px;
+  text-shadow: 2px 2px #EFF6E0;
 }
 
 ul {
