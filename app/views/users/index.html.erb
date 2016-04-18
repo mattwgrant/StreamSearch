@@ -83,6 +83,7 @@
           <ul>
           <%# if result["isStreamable"] == true%>
             <li id="spotDisplay"><%= result["artistName"] %></li>
+            <li><a href="albums/<%= result["artistId"] %>">Album</a></li>
            <!--  <p><%#= result["collectionName"] %> <%#= result["artistName"] %> <%#= result["trackCount"] %></p>
             <ul>  
               <li>Song: "<%#= result["trackName"] %>"</li>
@@ -106,6 +107,7 @@
         <% @rhapResults.each do |rhapResult| %>
         <ul>
           <li id="spotDisplay"><%= rhapResult["name"] %></li>
+          <li><a href="albums/<%= rhapResult["id"] %>">Album</a></li>
           <li><%#= rhapResult["name"] %> <!-- Artist: --> <%#= rhapResult["artist"]["name"] %></li>
          <!--  <ul>
             <li>Song: "<%#= rhapResult["name"] %>"</li>

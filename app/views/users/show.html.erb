@@ -1,4 +1,4 @@
-<div id="spotty">  
+<!-- <div id="spotty">  
   <div class="spotifyResults">
     <div id="spotify">
       <strong>Spotify</strong>
@@ -6,60 +6,52 @@
   </div><br><br><br>
 
     <div class="spotifyResults">
-      <% if @spotAlbums %>
-        <% @spotAlbums["items"].each do |spotAlbum| %>
-          <%# spotAlbum["available_markets","US"] %>
+      <% #if @spotAlbums %>
+        <%# @spotAlbums["items"].each do |spotAlbum| %>
+          <%# if spotAlbum["ava"]["US"] %>
             <ul> 
-              <li><%= spotAlbum["name"] %></li>
-              <li><%= image_tag spotAlbum["images"][0]["url"], :class => "album_art" %></li>
+              <li><%#= spotAlbum["name"] %></li>
+              <li><%#= image_tag spotAlbum["images"][0]["url"], :class => "album_art" %></li>
 
             </ul>
           <%# end %>
-        <% end %>
-      <% end %>
+        <%# end %>
+      <%# end %>
     </div>
-</div>
+</div> -->
 
-<div id="appyy">  
+<!-- <div id="appy">
   <div class="appleResults">
     <div id="apple">
-      <strong>Apple Music</strong>
+      <strong>Apple Music:</strong>
     </div>
   </div><br><br><br>
-
     <div class="appleResults">
-      <% if @itunesAlbums %>
-        <% @itunesAlbums.each do |itunesAlbum| %>
-          <%# spotAlbum["available_markets","US"] %>
-            <ul> 
-              <li><%= itunesAlbum["name"] %></li>
-              <li><%= image_tag spotAlbum["images"][0]["url"], :class => "album_art" %></li>
-
-            </ul>
-          <%# end %>
-        <% end %>
-      <% end %>
+      <%# if @appleAlbums %>
+        <%# @appleAlbums.each do |appleAlbum| %>
+          <ul>
+          <%# if result["isStreamable"] == true%>
+            <li id="spotDisplay"><%#= appleAlbum["collectionName"] %></li>
+            <li><%#= image_tag appleAlbum["artworkUrl100"] %></li> 
+          </ul>
+        <%# end %>
+      <%# end %>
     </div>
-</div>
+</div> -->
 
-<div id="spotty">  
-  <div class="spotifyResults">
-    <div id="spotify">
-      <strong>Spotify</strong>
+ <div class="rhapResults">
+    <div id="rhapsody">
+      <strong>Rhapsody:</strong>
     </div>
   </div><br><br><br>
-
-    <div class="spotifyResults">
-      <% if @spotAlbums %>
-        <% @spotAlbums["items"].each do |spotAlbum| %>
-          <%# spotAlbum["available_markets","US"] %>
-            <ul> 
-              <li><%= spotAlbum["name"] %></li>
-              <li><%= image_tag spotAlbum["images"][0]["url"], :class => "album_art" %></li>
-
-            </ul>
-          <%# end %>
+  <div class="rhapResults">
+      <% if @rhapAlbums %>
+        <% @rhapAlbums.each do |rhapAlbum| %>
+        <ul>
+          <li id="spotDisplay"><%= rhapAlbum["name"] %></li>
+        </ul>
         <% end %>
       <% end %>
-    </div>
-</div>
+  </div>
+
+   

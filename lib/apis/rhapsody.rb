@@ -12,10 +12,10 @@ class Apis::Rhapsody
     get_response url
   end
 
-  # def self.lookup term, key = "id", *args
-  #   url = "#{@@url}search?#{key}=#{term}"
-  #   get_response url
-  # end
+  def self.lookup id
+    album = "https://api.rhapsody.com/v1/artists/#{id}/top?apikey=OTNkNjM2YzAtZGIxMC00ZTg4LWJjNjItMWJhOWZiYTk4MTVl&limit=20"
+    get_response album
+  end
 
   def self.get_response url
     uri = URI(url)
