@@ -20,11 +20,18 @@ class Apis::Itunes
     get_response album
   end
 
+  def self.find collectionId
+    songs = "#{@@url}/lookup?id=#{collectionId}&entity=song"
+    get_response songs
+  end
+
   def self.get_response url
     uri = URI(url)
     response = Net::HTTP.get(uri)
     parsed = JSON.parse(response)
     parsed["results"]
+    # parsed["appleAlbums"]
+    # parsed["appleSongs"]
 
 
 

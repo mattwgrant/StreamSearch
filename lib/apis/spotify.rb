@@ -17,6 +17,11 @@ class Apis::Spotify
     get_response album
   end
 
+  def self.find id
+    songs = "#{@@url}/v1/albums/#{id}/tracks"
+    get_response songs
+  end
+
   def self.get_response url
     uri = URI(url)
     response = Net::HTTP.get(uri)

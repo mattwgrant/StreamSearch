@@ -25,12 +25,14 @@ class UsersController < ApplicationController
 
 
   def show
-    #@spotAlbums = Apis::Spotify.lookup(params[:id])
+    @spotAlbums = Apis::Spotify.lookup(params[:id])
     #@appleAlbums = Apis::Itunes.lookup(params[:id])
-    @rhapAlbums = Apis::Rhapsody.lookup(params[:id])
+    #@rhapAlbums = Apis::Rhapsody.lookup(params[:id])
   end
 
   def songs
-    
+    @spotSongs = Apis::Spotify.find(params[:id])
+    #@appleSongs = Apis::Itunes.find(params[:id])
+    #@rhapSongs = Apis::Rhapsody.find(params[:id])
   end
 end

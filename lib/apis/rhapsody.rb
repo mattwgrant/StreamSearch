@@ -15,7 +15,15 @@ class Apis::Rhapsody
   def self.lookup id 
     album = "#{@@url}/v1/artists/Art.#{id}/albums/top?apikey=OTNkNjM2YzAtZGIxMC00ZTg4LWJjNjItMWJhOWZiYTk4MTVl"
     get_response album
+
+    # songs = "#{@@url}/v1/albums/Alb.#{id}/tracks?apikey=OTNkNjM2YzAtZGIxMC00ZTg4LWJjNjItMWJhOWZiYTk4MTVl"
+    # get_response songs
     # byebug
+  end
+
+  def self.find id
+    songs = "#{@@url}/v1/albums/Alb.#{id}/tracks?apikey=OTNkNjM2YzAtZGIxMC00ZTg4LWJjNjItMWJhOWZiYTk4MTVl"
+    get_response songs
   end
 
   def self.get_response url

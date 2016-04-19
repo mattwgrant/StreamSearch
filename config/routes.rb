@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get "/albums/:id" => "users#show"
 
-  get "/songs/:id" => "users#songs"
+  get "/albums/songs/:id" => "users#songs"
   
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
