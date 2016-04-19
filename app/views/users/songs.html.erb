@@ -1,4 +1,4 @@
-<div id="spotty">  
+<!-- <div id="spotty">  
   <div class="spotifyResults">
     <div id="spotify">
       <strong>Spotify</strong>
@@ -6,40 +6,40 @@
   </div><br><br><br>
 
     <div class="spotifyResults">
-      <% if @spotSongs %>
-        <% @spotSongs["items"].each do |spotSong| %>
+      <%# if @spotSongs %>
+        <%# @spotSongs["items"].each do |spotSong| %>
           <%# if spotAlbum["ava"]["US"] %>
             <ul> 
-              <li><%= spotSong["name"] %></li>
+              <li><%#= spotSong["name"] %></li>
               <li><%#= image_tag spotAlbum["images"][0]["url"], :class => "album_art" %></li>
 
             </ul>
           <%# end %>
-        <% end %>
-      <% end %>
+        <%# end %>
+      <%# end %>
     </div>
-</div>
+</div> -->
 
-<!-- <div id="appy">
+<div id="appy">
   <div class="appleResults">
     <div id="apple">
       <strong>Apple Music</strong>
     </div>
   </div><br><br><br>
     <div class="appleResults">
-      <%# if @appleSongs %>
-        <%# @appleSongs.each do |appleSong| %>
+      <% if @appleSongs %>
+        <% @appleSongs.each do |appleSong| %>
           <ul>
-          <%# if appleSongs["isStreamable"] == true %>
-            <!-- <li id="spotDisplay"><%#= appleAlbum["collectionName"] %></li> -->
-            <!-- <li id="spotDisplay"><%#= appleSong["trackName"] %></li>
+          <% if appleSong["isStreamable"] == true %>
+          <!--  <li id="spotDisplay"><%#= appleAlbum["collectionName"] %></li> -->
+            <li id="spotDisplay"><%= appleSong["trackName"] %></li>
             <li><%#= image_tag appleAlbum["artworkUrl100"] %></li> 
-          </ul> -->
-          <%# end %>
-        <%# end %>
-      <%# end %>
-<!--     </div>
-</div> -->
+          </ul>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+</div>
 
 <!--  <div class="rhapResults">
     <div id="rhapsody">
