@@ -30,7 +30,7 @@
       <%# if @appleAlbums %>
         <%# @appleAlbums.each do |appleAlbum| %>
           <ul>
-          <%# if result["isStreamable"] == true%>
+          <%# if appleAlbum["isStreamable"] == true%>
             <li id="spotDisplay"><%#= appleAlbum["collectionName"] %></li>
             <li><%#= image_tag appleAlbum["artworkUrl100"] %></li> 
           </ul>
@@ -41,15 +41,20 @@
 
  <div class="rhapResults">
     <div id="rhapsody">
-      <strong>Rhapsody:</strong>
+      <strong>Rhapsody</strong>
     </div>
   </div><br><br><br>
   <div class="rhapResults">
       <% if @rhapAlbums %>
         <% @rhapAlbums.each do |rhapAlbum| %>
-        <ul>
-          <li id="spotDisplay"><%= rhapAlbum["name"] %></li>
-        </ul>
+          <% if rhapAlbum["type"]["name"]["Main Releases"] %>
+            <ul>
+              <li id="spotDisplay"><%= rhapAlbum["name"] %></li>
+              <% if rhapAlbum["images"][0] %>
+              <li><%= image_tag rhapAlbum["images"][0]["url"] %></li>
+            </ul>
+            <% end %>
+          <% end %>
         <% end %>
       <% end %>
   </div>

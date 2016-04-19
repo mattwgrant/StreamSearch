@@ -13,7 +13,7 @@ class Apis::Rhapsody
   end
 
   def self.lookup id
-    album = "https://api.rhapsody.com/v1/artists/#{id}/top?apikey=OTNkNjM2YzAtZGIxMC00ZTg4LWJjNjItMWJhOWZiYTk4MTVl&limit=20"
+    album = "#{@@url}/v1/artists/#{id}/albums/top?apikey=OTNkNjM2YzAtZGIxMC00ZTg4LWJjNjItMWJhOWZiYTk4MTVl"
     get_response album
   end
 
