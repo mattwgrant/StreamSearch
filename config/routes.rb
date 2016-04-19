@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post "/search" => "users#search"
 
   get "/albums/:id" => "users#show"
+
+  get "/songs/:id" => "users#songs"
   
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

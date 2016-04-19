@@ -12,9 +12,10 @@ class Apis::Rhapsody
     get_response url
   end
 
-  def self.lookup id
-    album = "#{@@url}/v1/artists/#{id}/albums/top?apikey=OTNkNjM2YzAtZGIxMC00ZTg4LWJjNjItMWJhOWZiYTk4MTVl"
+  def self.lookup id 
+    album = "#{@@url}/v1/artists/Art.#{id}/albums/top?apikey=OTNkNjM2YzAtZGIxMC00ZTg4LWJjNjItMWJhOWZiYTk4MTVl"
     get_response album
+    # byebug
   end
 
   def self.get_response url

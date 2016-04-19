@@ -107,7 +107,7 @@
         <% @rhapResults.each do |rhapResult| %>
         <ul>
           <li id="spotDisplay"><%= rhapResult["name"] %></li>
-          <li><a href="albums/<%= rhapResult["id"] %>">Album</a></li>
+          <li><a href="albums/<%= rhapResult["id"].gsub(/[^0-9]/, '') %>">Album</a></li>
           <li><%#= rhapResult["name"] %> <!-- Artist: --> <%#= rhapResult["artist"]["name"] %></li>
          <!--  <ul>
             <li>Song: "<%#= rhapResult["name"] %>"</li>

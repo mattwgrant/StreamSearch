@@ -28,7 +28,9 @@ class UsersController < ApplicationController
     #@spotAlbums = Apis::Spotify.lookup(params[:id])
     #@appleAlbums = Apis::Itunes.lookup(params[:id])
     @rhapAlbums = Apis::Rhapsody.lookup(params[:id])
-    # @albums = "#{@@url}/v1/artist/#{key}/albums"
-    # @albums ="#{@@url}/v1/artists/" + params[:id] + "/albums"
+  end
+
+  def songs
+    
   end
 end
