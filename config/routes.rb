@@ -9,7 +9,19 @@ Rails.application.routes.draw do
   get "/albums/:id" => "users#show"
 
   get "/albums/songs/:id" => "users#songs"
+
+  get "/apple_albums/:id" => "users#apple_albums", :as => "apple_albums"
+ 
+  get "/spotify_albums/:id" => "users#spotify_albums", :as => "spotify_albums" 
   
+  get "/rhapsody_albums/:id" => "users#rhapsody_albums", :as => "rhapsody_albums"
+
+  get "/apple_albums/apple_songs/:id" => "users#apple_songs", :as => "apple_songs"
+ 
+  get "/spotify_albums/spotify_songs/:id" => "users#spotify_songs", :as => "spotify_songs" 
+  
+  get "/rhapsody_albums/rhapsody_songs/:id" => "users#rhapsody_songs", :as => "rhapsody_songs"
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

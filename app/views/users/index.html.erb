@@ -1,19 +1,18 @@
 <h1 id="welcome">Welcome to StreamSearch</h1>
-<h1 id="searchby">StreamSearch</h1>
 <div id="main">
   <h3>Search Spotify, Apple Music, and Rhapsody to find the music that you are looking for!</h3>
 </div>
-<div id="search-instructions">
+<!-- <div id="search-instructions">
   <h3>Search by Artist, Album, or Song</h3>
-</div>
+</div> -->
 
-<button id="begin">Click to Begin</button>
-
-<div id="search-bar">
+<div class="search-bar">
 
   <%= form_tag "/search" do %>
-    <%= text_field_tag :query, nil, placeholder: 'Search by song...' %>
-    <%= submit_tag :Search %>
+    <span><%= text_field_tag :query, nil, placeholder: 'Search by artist...', :id => "search" %></span>
+    <span><%#= image_submit_tag "search.png", class: 'searchTag' %></span>
+    <span><%= submit_tag :Search, class: 'searchTag' %></span>
+ 
   <% end %>
 </div>
 
@@ -21,7 +20,7 @@
   <div id="spotty">
     <div class="spotifyResults">
       <div id="spotify">
-        <strong>Spotify:</strong>
+        <%= image_tag ("spotify2.png"), :class => "icon" %> <strong>Spotify</strong>
       </div>
     </div><br><br><br>
      <!--    <%# if @spotResults %>
@@ -41,7 +40,9 @@
             <ul>
               <li id="spotDisplay"><%= spotResult["name"] %> </li>
               <li>
-              <a href="/albums/<%= spotResult["id"] %>">Albums</a>
+             <!--  <a href="/albums/<%#= spotResult["id"] %>">Albums</a> -->
+              <%= link_to "Albums", spotify_albums_path(spotResult["id"]), :remote => true %>
+              <div id="spotifyAlbums"></div>
             <!--   <a href="https://api.spotify.com/v1/artists/<%#= spotResult["id"] %>/albums">Albums</a> -->
               </li>
               <!-- goal: display each albums title per artist -->
@@ -67,6 +68,8 @@
 
             </ul>
           <% end %>
+          <%# else %>
+        <!-- <li>Sorry, there are no results for this search</li> -->
         <% end %>
       </div>
     </div>
@@ -74,7 +77,7 @@
   <div id="appy">
     <div class="appleResults">
       <div id="apple">
-        <strong>Apple Music:</strong>
+        <%= image_tag ("apple.png"), :class => "icon" %><strong>Apple Music</strong>
       </div>
     </div><br><br><br>
       <div class="appleResults">
@@ -83,7 +86,11 @@
           <ul>
           <%# if result["isStreamable"] == true%>
             <li id="spotDisplay"><%= result["artistName"] %></li>
-            <li><a href="albums/<%= result["artistId"] %>">Album</a></li>
+          <!--  <li><a href="albums/<%#= result["artistId"] %>">Albums</a></li> -->
+           <li>
+           <%= link_to "Albums", apple_albums_path(result["artistId"]), :remote => true %>
+           </li>
+            <div id="appleAlbums"></div>
            <!--  <p><%#= result["collectionName"] %> <%#= result["artistName"] %> <%#= result["trackCount"] %></p>
             <ul>  
               <li>Song: "<%#= result["trackName"] %>"</li>
@@ -93,13 +100,15 @@
             <%# end %>
           </ul>
           <% end %>
+         <!--  <%# else %>
+        <li>Sorry, there are no results for this search</li> -->
         <% end %>
       </div>
     </div>
 
   <div class="rhapResults">
     <div id="rhapsody">
-      <strong>Rhapsody:</strong>
+      <%= image_tag ("rhapsody.png"), :class => "icon" %><strong>Rhapsody</strong>
     </div>
   </div><br><br><br>
   <div class="rhapResults">
@@ -107,7 +116,11 @@
         <% @rhapResults.each do |rhapResult| %>
         <ul>
           <li id="spotDisplay"><%= rhapResult["name"] %></li>
-          <li><a href="albums/<%= rhapResult["id"].gsub(/[^0-9]/, '') %>">Album</a></li>
+         <!--  <li><a href="albums/<%#= rhapResult["id"].gsub(/[^0-9]/, '') %>">Albums</a></li> -->
+        <li>
+          <%= link_to "Albums", rhapsody_albums_path(rhapResult["id"].gsub(/[^0-9]/, '')), :remote => true %>
+        </li>
+          <div id="rhapsodyAlbums"></div>
           <li><%#= rhapResult["name"] %> <!-- Artist: --> <%#= rhapResult["artist"]["name"] %></li>
          <!--  <ul>
             <li>Song: "<%#= rhapResult["name"] %>"</li>
@@ -118,7 +131,11 @@
        <!--    <p>Sorry, we were unable to locate any results</p> -->
         </ul>
         <% end %>
+        <%# else %>
+       <!--  <li>Sorry, there are no results for this search</li> -->
       <% end %>
+
+
   </div>
 </div>
 

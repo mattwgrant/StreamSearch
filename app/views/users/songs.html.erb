@@ -1,7 +1,7 @@
 <!-- <div id="spotty">  
   <div class="spotifyResults">
     <div id="spotify">
-      <strong>Spotify</strong>
+      <%#= image_tag ("spotify.png"), :class => "icon" %><strong>Spotify</strong>
     </div>
   </div><br><br><br>
 
@@ -11,11 +11,15 @@
           <%# if spotAlbum["ava"]["US"] %>
             <ul> 
               <li><%#= spotSong["name"] %></li>
+           
+
               <li><%#= image_tag spotAlbum["images"][0]["url"], :class => "album_art" %></li>
 
             </ul>
           <%# end %>
         <%# end %>
+       <%# else %>
+            <li id="noMessage">Sorry, this is not streaming on Spotify</li>
       <%# end %>
     </div>
 </div> -->
@@ -23,10 +27,15 @@
 <div id="appy">
   <div class="appleResults">
     <div id="apple">
-      <strong>Apple Music</strong>
+      <%= image_tag ("apple.png"), :class => "icon" %><strong>Apple Music</strong>
     </div>
   </div><br><br><br>
+
     <div class="appleResults">
+      <div class="links">  
+        <li><%= link_to "Albums", :back %></li>
+        <li><a href="/">Home</a></li>
+      </div>
       <% if @appleSongs %>
         <% @appleSongs.each do |appleSong| %>
           <ul>
@@ -34,16 +43,22 @@
           <!--  <li id="spotDisplay"><%#= appleAlbum["collectionName"] %></li> -->
             <li id="spotDisplay"><%= appleSong["trackName"] %></li>
             <li><%#= image_tag appleAlbum["artworkUrl100"] %></li> 
-          </ul>
+          <%# else appleSong["isStreamable"] == false %>
+            <!-- <li>Sorry, this is not streaming on Apple Music</li> -->
+
+
+                    
           <% end %>
+          </ul>
         <% end %>
+      
       <% end %>
     </div>
 </div>
 
 <!--  <div class="rhapResults">
     <div id="rhapsody">
-      <strong>Rhapsody</strong>
+      <%#= image_tag ("rhapsody.png"), :class => "icon" %><strong>Rhapsody</strong>
     </div>
   </div><br><br><br>
   <div class="rhapResults">
@@ -57,12 +72,15 @@
           <%# if rhapAlbum["type"]["name"]["Main Releases"] %>
             <ul>
               <li><%#= rhapSong["name"] %></li>
+
               <%# if rhapAlbum["images"][0] %>
               <li><%#= image_tag rhapAlbum["images"][0]["url"] %></li>
             </ul>
             <%# end %>
           <%# end %>
         <%# end %>
+        <%# else %>
+          <li id="noMessage">Sorry, this is not streaming on Rhapsody</li>
       <%# end %>
   </div> -->
 

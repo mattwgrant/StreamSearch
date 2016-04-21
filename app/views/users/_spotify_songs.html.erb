@@ -1,0 +1,13 @@
+<% if @spotSongs %>
+  <% @spotSongs["items"].each do |spotSong| %>
+    <%# if spotAlbum["ava"]["US"] %>
+      <ul> 
+        <li><%= spotSong["name"] %></li>
+        <li><%#= image_tag spotAlbum["images"][0]["url"], :class => "album_art" %></li>
+
+      </ul>
+    <% end %>
+  <% end %>
+  <% else %>
+    <li id="noMessage">Sorry, this is not streaming on Spotify</li>
+<% end %>

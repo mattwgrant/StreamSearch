@@ -1,0 +1,20 @@
+<% if @rhapSongs %>
+  <% @rhapSongs.each do |rhapSong| %>
+    <!-- <ul>
+      <li id="spotDisplay"><%#= rhapSong["album"]["name"] %></li>
+    </ul> -->
+        
+        
+          <%# if rhapAlbum["type"]["name"]["Main Releases"] %>
+    <ul>
+      <li><%= rhapSong["name"] %></li>
+
+              <%# if rhapAlbum["images"][0] %>
+              <li><%#= image_tag rhapAlbum["images"][0]["url"] %></li>
+    </ul>
+            <% #end %>
+    <%# end %>
+    <% end %>
+  <%# else %>
+          <!-- <li id="noMessage">Sorry, this is not streaming on Rhapsody</li> -->
+<% end %>
