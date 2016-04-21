@@ -37,11 +37,15 @@
       <div class="spotifyResults">
         <% if @spotResults %>
           <% @spotResults["artists"]["items"].each do |spotResult| %>
-            <ul>
-              <li id="spotDisplay"><%= spotResult["name"] %> </li>
-              <li>
-             <!--  <a href="/albums/<%#= spotResult["id"] %>">Albums</a> -->
-              <%= link_to "Albums", spotify_albums_path(spotResult["id"]), :remote => true %>
+            <div class="artistAlbum">
+              <ul>
+                <li id="spotDisplay"><%= spotResult["name"] %></li>
+                <li>
+                <%= link_to "Albums", spotify_albums_path(spotResult["id"]), :remote => true %>
+                </li>
+              </ul>  
+            </div>
+           
               <div id="spotifyAlbums"></div>
             <!--   <a href="https://api.spotify.com/v1/artists/<%#= spotResult["id"] %>/albums">Albums</a> -->
               </li>
@@ -85,11 +89,13 @@
           <% @results.each do |result| %>
           <ul>
           <%# if result["isStreamable"] == true%>
+          <div class="artistAlbum">
             <li id="spotDisplay"><%= result["artistName"] %></li>
           <!--  <li><a href="albums/<%#= result["artistId"] %>">Albums</a></li> -->
-           <li>
-           <%= link_to "Albums", apple_albums_path(result["artistId"]), :remote => true %>
-           </li>
+            <li>
+            <%= link_to "Albums", apple_albums_path(result["artistId"]), :remote => true %>
+            </li>
+          </div>
             <div id="appleAlbums"></div>
            <!--  <p><%#= result["collectionName"] %> <%#= result["artistName"] %> <%#= result["trackCount"] %></p>
             <ul>  
@@ -112,14 +118,16 @@
     </div>
   </div><br><br><br>
   <div class="rhapResults">
-      <% if @rhapResults %>
-        <% @rhapResults.each do |rhapResult| %>
+    <% if @rhapResults %>
+      <% @rhapResults.each do |rhapResult| %>
         <ul>
-          <li id="spotDisplay"><%= rhapResult["name"] %></li>
-         <!--  <li><a href="albums/<%#= rhapResult["id"].gsub(/[^0-9]/, '') %>">Albums</a></li> -->
-        <li>
-          <%= link_to "Albums", rhapsody_albums_path(rhapResult["id"].gsub(/[^0-9]/, '')), :remote => true %>
-        </li>
+          <div class="artistAlbum">
+            <li id="spotDisplay"><%= rhapResult["name"] %></li>
+           <!--  <li><a href="albums/<%#= rhapResult["id"].gsub(/[^0-9]/, '') %>">Albums</a></li> -->
+            <li>
+              <%= link_to "Albums", rhapsody_albums_path(rhapResult["id"].gsub(/[^0-9]/, '')), :remote => true %><br><br><br>
+            </li>
+          </div>
           <div id="rhapsodyAlbums"></div>
           <li><%#= rhapResult["name"] %> <!-- Artist: --> <%#= rhapResult["artist"]["name"] %></li>
          <!--  <ul>
@@ -130,7 +138,7 @@
         <%# else %>
        <!--    <p>Sorry, we were unable to locate any results</p> -->
         </ul>
-        <% end %>
+    <% end %>
         <%# else %>
        <!--  <li>Sorry, there are no results for this search</li> -->
       <% end %>

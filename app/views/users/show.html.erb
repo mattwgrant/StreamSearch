@@ -23,10 +23,10 @@
     </div>
 </div> -->
 
-<div id="appy">
+<!-- <div id="appy">
   <div class="appleResults">
     <div id="apple">
-      <%= image_tag ("apple.png"), :class => "icon" %><strong>Apple Music</strong>
+      <%#= image_tag ("apple.png"), :class => "icon" %><strong>Apple Music</strong>
     </div>
   </div><br><br><br>
       <div class="links">
@@ -34,26 +34,26 @@
       </div>
     <div class="appleResults">
 
-      <% if @appleAlbums %>
-        
-        <% @appleAlbums.each do |appleAlbum| %>
+      <%# if @appleAlbums %>
+
+        <%# @appleAlbums.each do |appleAlbum| %>
           <ul>
-            <li id="spotDisplay"><%= appleAlbum["collectionName"] %></li>
-            <li><%= image_tag appleAlbum["artworkUrl100"] %></li>
-            <% if appleAlbum["collectionId"] %>
+            <li id="spotDisplay"><%#= appleAlbum["collectionName"] %></li>
+            <li><%#= image_tag appleAlbum["artworkUrl100"] %></li>
+            <%# if appleAlbum["collectionId"] %>
             <div class="links">
-              <li><a href="songs/<%= appleAlbum["collectionId"] %>">Songs</a></li>
+              <li><a href="songs/<%#= appleAlbum["collectionId"] %>">Songs</a></li>
               <li><a href="/">Home</a></li>
-            <% end %>
+            <%# end %>
           </ul>
-        <% end %>
-        <% else %>
+        <%# end %>
+        <%# else %>
         <li>Sorry, there are no results for this search</li>
         <li><a href="/">Home</a></li>
-      <% end %>
+      <%# end %>
 
     </div>
-</div>
+</div> -->
 <!-- 
  <div class="rhapResults">
     <div id="rhapsody">
