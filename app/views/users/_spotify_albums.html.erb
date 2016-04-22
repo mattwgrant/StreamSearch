@@ -7,7 +7,7 @@
         <li><%= link_to "Songs", spotify_songs_path(spotAlbum["id"]), :remote => true %></li>
       </div>
       <li><%= image_tag spotAlbum["images"][0]["url"], :class => "album_art" %></li>
-      <li id="<%= @spotAlbums["items"].index(spotAlbum) %>"></li>
+      <li id="<%= spotAlbum["id"]%>"></li>
       <!-- <li id= "<%#= @spotAlbums["items"].index(spotAlbum) %>"></li> -->
     </ul>
     <%# end %>

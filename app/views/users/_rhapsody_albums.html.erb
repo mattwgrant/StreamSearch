@@ -8,7 +8,7 @@
          </div>
             <% if rhapAlbum["images"][0] %>
             <li><%= image_tag rhapAlbum["images"][0]["url"], :class => "album_art" %></li>
-            <li id="rhapsodySongs"></li>  
+            <li id="<%= rhapAlbum["id"].gsub(/[^0-9]/, '') %>"></li>  
       </ul>
       <% end %>
     <% end %>

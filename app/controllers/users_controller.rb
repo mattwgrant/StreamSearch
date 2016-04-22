@@ -25,7 +25,6 @@ class UsersController < ApplicationController
 
   def spotify_albums
     @spotAlbums = Apis::Spotify.lookup(params[:id])
-    # @spotSort = @spotAlbums
 
     respond_to do |format|
       format.js { render 'spotify_albums' }
@@ -49,6 +48,7 @@ class UsersController < ApplicationController
   end
 
   def spotify_songs
+    @spot_album_id = params[:id]
     @spotSongs = Apis::Spotify.find(params[:id])
 
     respond_to do |format|
@@ -57,6 +57,7 @@ class UsersController < ApplicationController
   end
 
   def apple_songs
+    @apple_album_id = params[:id]
     @appleSongs = Apis::Itunes.find(params[:id])
 
     respond_to do |format|
@@ -65,6 +66,7 @@ class UsersController < ApplicationController
   end
 
   def rhapsody_songs
+    @rhap_album_id = params[:id]
     @rhapSongs = Apis::Rhapsody.find(params[:id])
 
     respond_to do |format|
