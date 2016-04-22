@@ -1,19 +1,17 @@
 <% if @spotAlbums %>
   <% @spotAlbums["items"].each do |spotAlbum| %>
-    <%#   if spotAlbum["available_markets"]["US"] %>
-    <%# if spotAlbum["ava"]["US"] %>
-      <ul> 
-        <br><li><%= spotAlbum["name"] %></li>
-        <li><%= image_tag spotAlbum["images"][0]["url"], :class => "album_art" %></li>
-       <!--  <li><a href="songs/<%#= spotAlbum["id"] %>">Songs</a></li> -->
-        <li><%= link_to "Songs", spotify_songs_path(spotAlbum["id"]), :remote => true %></li><br>
-      </ul>
-      <ul>
-        <div id="spotifySongs"></div><br>
-
-      </ul>
+    <%# if spotAlbum["US"] %>
+    <ul>
+      <div class="links"> 
+        <li id="spotDisplay"><%= spotAlbum["name"] %></li>
+        <li><%= link_to "Songs", spotify_songs_path(spotAlbum["id"]), :remote => true %></li>
+      </div>
+      <li><%= image_tag spotAlbum["images"][0]["url"], :class => "album_art" %></li>
+      <li id="<%= @spotAlbums["items"].index(spotAlbum) %>"></li>
+      <!-- <li id= "<%#= @spotAlbums["items"].index(spotAlbum) %>"></li> -->
+    </ul>
     <%# end %>
   <% end %>
   <%# else %>
-    <li>Sorry, there are no results for this search</li>
+    <!-- <li>Sorry, there are no results for this search</li> -->
 <% end %>

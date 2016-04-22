@@ -23,60 +23,26 @@
         <%= image_tag ("spotify2.png"), :class => "icon" %> <strong>Spotify</strong>
       </div>
     </div><br><br><br>
-     <!--    <%# if @spotResults %>
-          <%# @spotResults["tracks"]["items"].each do |spotResult| %>
-            <ul>
-              <li>Song: "<%#= spotResult["name"]%>"</li>
-              <li>Album: <%#= spotResult ["album"]["name"] %></li>
-              <li>Artist: <#%= spotResult["artists"][0]["name"] %></li>
-              <li><%#= spotResult ["images"]["url"] %></li>
-              
-            </ul>
-          <%# end %>
-        <%# end %> -->
       <div class="spotifyResults">
         <% if @spotResults %>
           <% @spotResults["artists"]["items"].each do |spotResult| %>
             <div class="artistAlbum">
               <ul>
-                <li id="spotDisplay"><%= spotResult["name"] %></li>
-                <li>
-                <%= link_to "Albums", spotify_albums_path(spotResult["id"]), :remote => true %>
-                </li>
+                <div class="links">
+                  <li id="spotDisplay"><%= spotResult["name"] %></li>
+                  <li>
+                  <%= link_to "Albums", spotify_albums_path(spotResult["id"]), :remote => true %></li>
+                </div>
               </ul>  
             </div>
-           
-              <div id="spotifyAlbums"></div>
-            <!--   <a href="https://api.spotify.com/v1/artists/<%#= spotResult["id"] %>/albums">Albums</a> -->
-              </li>
-              <!-- goal: display each albums title per artist -->
-                  <!-- show page: link takes you to a page where you see all the albums from that artist, and we have artist id available -->
-
-
-                  <!-- params: artist id,
-                  new link: goes to show page, which displays all album info 
-                      q: how do we get user to show page that is individual to each artist? 
-                      the link to the show page is set up how? 
-
-                  get ==> show page
-                          in controller, set some instance variable to be the result of getting <a href="https://api.spotify.com/v1/artists/<%#= spotResult["id"] %>/albums">Albums</a> -->
-
-
-              <%# if spotResult["images"][0] %>
-            <!--   <li><%#= image_tag spotResult["images"][0]["url"], :class => "artist_img" %></li>
-              <%# else %>
-              <li><%#= image_tag "missingperson.png", :class => "artist_img" %> </li> -->
-              
-             <!--  <li> <img src='<%#=spotResult["images"][0]["url"] %>'></li> -->
-              <%# end %>
-
-            </ul>
+            <div id="spotifyAlbums"></div>
           <% end %>
           <%# else %>
         <!-- <li>Sorry, there are no results for this search</li> -->
         <% end %>
       </div>
     </div>
+
 
   <div id="appy">
     <div class="appleResults">
@@ -87,24 +53,16 @@
       <div class="appleResults">
         <% if @results %>
           <% @results.each do |result| %>
-          <ul>
-          <%# if result["isStreamable"] == true%>
-          <div class="artistAlbum">
-            <li id="spotDisplay"><%= result["artistName"] %></li>
-          <!--  <li><a href="albums/<%#= result["artistId"] %>">Albums</a></li> -->
-            <li>
-            <%= link_to "Albums", apple_albums_path(result["artistId"]), :remote => true %>
-            </li>
-          </div>
+            <div class="artistAlbum">
+              <ul>  
+                <div class="links">
+                  <li id="spotDisplay"><%= result["artistName"] %></li>
+                  <li><%= link_to "Albums", apple_albums_path(result["artistId"]), :remote => true %></li>
+                </div>
+              </ul>
+            </div>
             <div id="appleAlbums"></div>
-           <!--  <p><%#= result["collectionName"] %> <%#= result["artistName"] %> <%#= result["trackCount"] %></p>
-            <ul>  
-              <li>Song: "<%#= result["trackName"] %>"</li>
-              <li>Album: <%#= result["collectionName"] %></li>
-              <li>Artist: <%#=result["artistName"] %></li>
-            </ul> -->
-            <%# end %>
-          </ul>
+          
           <% end %>
          <!--  <%# else %>
         <li>Sorry, there are no results for this search</li> -->
@@ -120,31 +78,24 @@
   <div class="rhapResults">
     <% if @rhapResults %>
       <% @rhapResults.each do |rhapResult| %>
-        <ul>
-          <div class="artistAlbum">
-            <li id="spotDisplay"><%= rhapResult["name"] %></li>
-           <!--  <li><a href="albums/<%#= rhapResult["id"].gsub(/[^0-9]/, '') %>">Albums</a></li> -->
-            <li>
-              <%= link_to "Albums", rhapsody_albums_path(rhapResult["id"].gsub(/[^0-9]/, '')), :remote => true %><br><br><br>
-            </li>
-          </div>
-          <div id="rhapsodyAlbums"></div>
-          <li><%#= rhapResult["name"] %> <!-- Artist: --> <%#= rhapResult["artist"]["name"] %></li>
-         <!--  <ul>
-            <li>Song: "<%#= rhapResult["name"] %>"</li>
-            <li>Album: <%#= rhapResult["album"]["name"] %></li> 
-            <li>Artist: <%#= rhapResult["artist"]["name"] %></li>
-          </ul> -->
-        <%# else %>
-       <!--    <p>Sorry, we were unable to locate any results</p> -->
-        </ul>
+        <div class="artistAlbum">
+          <ul>
+            <div class="links">
+              <li id="spotDisplay"><%= rhapResult["name"] %></li>
+             <!--  <li><a href="albums/<%#= rhapResult["id"].gsub(/[^0-9]/, '') %>">Albums</a></li> -->
+              <li><%= link_to "Albums", rhapsody_albums_path(rhapResult["id"].gsub(/[^0-9]/, '')), :remote => true %></li>
+            </div>
+          </ul>
+        </div>
+        <div id="rhapsodyAlbums"></div>
+        
     <% end %>
         <%# else %>
        <!--  <li>Sorry, there are no results for this search</li> -->
       <% end %>
 
 
-  </div>
+  <!-- </div> -->
 </div>
 
 

@@ -10,8 +10,9 @@ body {
 
 }
 
-.aristAlbums ul li {
+.aristAlbum {
   display: inline;
+  margin-bottom: 25px;
 }
 
 h1 {
@@ -72,12 +73,6 @@ h3 {
   font-size: 15px;
   border: 2px solid #01161E;
 }
-
-// .searchTag:focus {
-//   font-size: 20px;
-//   color: #598392;
-//   margin-left: -80px;
-// }
 
 .searchTag:focus {
   outline: 0;
@@ -191,11 +186,11 @@ li a:hover {
 
 .album_art {
   width: 100px;
+  margin-bottom: 10px;
 }
 
 .icon {
   width: 30px;
-  // margin-top: 15px;
   margin-right: 10px;
 }
 

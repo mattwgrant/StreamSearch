@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   def spotify_albums
     @spotAlbums = Apis::Spotify.lookup(params[:id])
+    # @spotSort = @spotAlbums
 
     respond_to do |format|
       format.js { render 'spotify_albums' }

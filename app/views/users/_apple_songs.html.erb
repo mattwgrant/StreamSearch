@@ -1,21 +1,15 @@
-<!-- <div class="links">  
-  <li><%#= link_to "Albums", :back %></li>
-  <li><a href="/">Home</a></li>
-</div> -->
 <% if @appleSongs %>
   <% @appleSongs.each do |appleSong| %>
-    <ul>
+ 
     <% if appleSong["isStreamable"] == true %>
-          <!--  <li id="spotDisplay"><%#= appleAlbum["collectionName"] %></li> -->
-      <li><%= appleSong["trackNumber"]%>. </li>
-      <li id="spotDisplay"><%= appleSong["trackName"] %></li>
-      <li><%#= image_tag appleAlbum["artworkUrl100"] %></li> 
-  <% #else appleSong["isStreamable"] == false %>
-  <!-- <p>Sorry, this is not streaming on Apple Music</p> -->
+    <ul>
+      <li><%= appleSong["trackName"] %></li>
 
+  <!-- <p>Sorry, this is not streaming on Apple Music</p> -->
+    </ul>
 
                     
     <% end %>
-    </ul>
+    
   <% end %>
 <% end %>

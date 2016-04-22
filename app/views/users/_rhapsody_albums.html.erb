@@ -2,15 +2,17 @@
   <% @rhapAlbums.each do |rhapAlbum| %>
     <% if rhapAlbum["type"]["name"]["Main Releases"] %>
       <ul>
-        <li id="spotDisplay"><%= rhapAlbum["name"] %></li>
-          <% if rhapAlbum["images"][0] %>
-            <li><%= image_tag rhapAlbum["images"][0]["url"] %></li>
-            <li><%= link_to "Songs", rhapsody_songs_path(rhapAlbum["id"].gsub(/[^0-9]/, '')), :remote => true %></li><br><br>
-            <div id="rhapsodySongs"></div>
+        <div class="links">
+          <li id="spotDisplay"><%= rhapAlbum["name"] %></li>
+          <li><%= link_to "Songs", rhapsody_songs_path(rhapAlbum["id"].gsub(/[^0-9]/, '')), :remote => true %></li>
+         </div>
+            <% if rhapAlbum["images"][0] %>
+            <li><%= image_tag rhapAlbum["images"][0]["url"], :class => "album_art" %></li>
+            <li id="rhapsodySongs"></li>  
       </ul>
-          <% end %>
+      <% end %>
     <% end %>
   <% end %>
-  <% else %>
-    <li>Sorry, there are no results for this search</li>
+  <%# else %>
+    <!-- <li>Sorry, there are no results for this search</li> -->
 <% end %>
