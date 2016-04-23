@@ -6,7 +6,7 @@
   <h3>Search by Artist, Album, or Song</h3>
 </div> -->
 
-<div class="search-bar">
+<div class="artist-search-bar">
 
   <%= form_tag "/search" do %>
     <span><%= text_field_tag :query, nil, placeholder: 'Search by artist...', :id => "search" %></span>
@@ -23,7 +23,7 @@
         <%= image_tag ("spotify2.png"), :class => "icon" %> <strong>Spotify</strong>
       </div>
     </div><br><br><br>
-      <div class="spotifyResults">
+      <div class="searchResults">
         <% if @spotResults %>
           <% @spotResults["artists"]["items"].each do |spotResult| %>
             <div class="artistAlbum">
@@ -50,7 +50,7 @@
         <%= image_tag ("apple.png"), :class => "icon" %><strong>Apple Music</strong>
       </div>
     </div><br><br><br>
-      <div class="appleResults">
+      <div class="searchResults">
         <% if @results %>
           <% @results.each do |result| %>
             <div class="artistAlbum">
@@ -75,7 +75,7 @@
       <%= image_tag ("rhapsody.png"), :class => "icon" %><strong>Rhapsody</strong>
     </div>
   </div><br><br><br>
-  <div class="rhapResults">
+  <div class="searchResults">
     <% if @rhapResults %>
       <% @rhapResults.each do |rhapResult| %>
         <div class="artistAlbum">

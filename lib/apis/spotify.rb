@@ -5,7 +5,7 @@ class Apis::Spotify
   @@url = "https://api.spotify.com"
 
   def self.search query, type = "", *args
-    url = "#{@@url}/v1/search?query=#{query}&offset=0&limit=20&type=artist"
+    url = "#{@@url}/v1/search?query=#{query}&offset=0&limit=20&type=artist&market=US"
     # album = "#{@@url}/v1/search?query=#{query}&offset=0&limit=20&type=album"
     song = "#{@@url}/v1/search?query=#{query}&offset=0&limit=20&type=track"
     get_response url
@@ -13,7 +13,7 @@ class Apis::Spotify
 
   def self.lookup id
     # term, key = "id", *args
-    album = "#{@@url}/v1/artists/#{id}/albums"
+    album = "#{@@url}/v1/artists/#{id}/albums?album_type=album&market=US"
     get_response album
   end
 
