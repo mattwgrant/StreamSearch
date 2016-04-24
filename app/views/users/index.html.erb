@@ -16,6 +16,16 @@
   <% end %>
 </div>
 
+<div class="song-search-bar">
+
+  <%= form_tag "/search" do %>
+    <span><%= text_field_tag :query, nil, placeholder: 'Search by song...', :id => "search" %></span>
+    <span><%#= image_submit_tag "search.png", class: 'searchTag' %></span>
+    <span><%= submit_tag :Search, class: 'searchTag' %></span>
+ 
+  <% end %>
+</div>
+
 <div class="results">
   <div id="spotty">
     <div class="spotifyResults">
@@ -31,7 +41,7 @@
                 <div class="links">
                   <li id="spotDisplay"><%= spotResult["name"] %></li>
                   <li>
-                  <%= link_to "Albums", spotify_albums_path(spotResult["id"]), :remote => true %></li>
+                  <%= link_to " Show Albums", spotify_albums_path(spotResult["id"]), :remote => true %></li>
                 </div>
               </ul>  
             </div>
@@ -57,7 +67,7 @@
               <ul>  
                 <div class="links">
                   <li id="spotDisplay"><%= result["artistName"] %></li>
-                  <li><%= link_to "Albums", apple_albums_path(result["artistId"]), :remote => true %></li>
+                  <li><%= link_to "Show Albums", apple_albums_path(result["artistId"]), :remote => true %></li>
                 </div>
               </ul>
             </div>
@@ -83,7 +93,7 @@
             <div class="links">
               <li id="spotDisplay"><%= rhapResult["name"] %></li>
              <!--  <li><a href="albums/<%#= rhapResult["id"].gsub(/[^0-9]/, '') %>">Albums</a></li> -->
-              <li><%= link_to "Albums", rhapsody_albums_path(rhapResult["id"].gsub(/[^0-9]/, '')), :remote => true %></li>
+              <li><%= link_to "Show Albums", rhapsody_albums_path(rhapResult["id"].gsub(/[^0-9]/, '')), :remote => true %></li>
             </div>
           </ul>
         </div>

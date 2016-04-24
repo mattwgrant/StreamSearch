@@ -7,16 +7,36 @@ body {
   background-color: #AEC3B0;
   color: #124559;
   font-family: helvetica;
-
+    // -opacity: 0.5;
+    // z-index: -5;
+  margin: none;
 }
+
+// #main {
+//   position: relative;
+// }
+
+// #main::after {
+//   content: "";
+//   display: block;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   background-image: url("background3.png");
+//   width: 100%;
+//   height: 100%;
+//   opacity: 0.2;
+//   z-index: -1;
+// }
 
 .searchResults {
   float: left;
   width: 385px;
   margin-left: 15px;
   padding: 5px;
-  height: 500px;
+  // height: 500px;
   border: 1px solid #124559;
+  background-color: #AEC3B0;
   box-shadow:  -1px 1px #124559,
        -2px 2px #124559,
        -3px 3px #124559,
@@ -24,20 +44,20 @@ body {
        -5px 5px #124559;
 }
 
-#spotifyAlbums {
-  height: 450px;
-    overflow: auto;
-}
+// #spotifyAlbums {
+//   height: 450px;
+//     overflow: auto;
+// }
 
-#appleAlbums {
-  height: 450px;
-    overflow: auto;
-}
+// #appleAlbums {
+//   height: 450px;
+//     overflow: auto;
+// }
 
-#rhapsodyAlbums {
-  height: 450px;
-    overflow: auto;
-}
+// #rhapsodyAlbums {
+//   height: 450px;
+//     overflow: auto;
+// }
 
 .aristAlbum {
   display: inline;
@@ -83,7 +103,7 @@ h3 {
 }
 
 .song-search-bar {
-  // display: none;
+  display: none;
   width: 400px;
   margin-left: 475px;
   height: 50px;
@@ -106,11 +126,11 @@ h3 {
   // width: 25px;
   margin-left: -65px;
   // margin-top: -5px;
-  background-color: #01161E;
+  // background-color: #01161E;
   height: 30px;
   color: #598392;
   font-size: 15px;
-  border: 2px solid #01161E;
+  // border: 2px solid #01161E;
 }
 
 .searchTag:focus {
@@ -145,6 +165,7 @@ h3 {
   margin-left: 15px;
   padding: 5px;
   border: 1px solid #124559;
+  background-color: #AEC3B0;
   box-shadow:  -1px 1px #124559,
        -2px 2px #124559,
        -3px 3px #124559,
@@ -164,6 +185,7 @@ h3 {
   margin-left: 15px;
   padding: 5px;
   border: 1px solid #124559;
+  background-color: #AEC3B0;
   box-shadow:  -1px 1px #124559,
        -2px 2px #124559,
        -3px 3px #124559,
@@ -183,6 +205,7 @@ h3 {
   margin-left: 15px;
   padding: 5px;
   border: 1px solid #124559;
+  background-color: #AEC3B0;
   box-shadow:  -1px 1px #124559,
        -2px 2px #124559,
        -3px 3px #124559,
