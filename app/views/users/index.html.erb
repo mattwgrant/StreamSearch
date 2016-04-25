@@ -6,7 +6,7 @@
   <h3>Search by Artist, Album, or Song</h3>
 </div> -->
 
-<div class="artist-search-bar">
+<div class="search-bar">
 
   <%= form_tag "/search" do %>
     <span><%= text_field_tag :query, nil, placeholder: 'Search by artist...', :id => "search" %></span>
@@ -16,15 +16,15 @@
   <% end %>
 </div>
 
-<div class="song-search-bar">
+<!-- <div class="song-search-bar">
 
-  <%= form_tag "/search" do %>
-    <span><%= text_field_tag :query, nil, placeholder: 'Search by song...', :id => "search" %></span>
+  <%#= form_tag "/search" do %>
+    <span><%#= text_field_tag :query, nil, placeholder: 'Search by song...', :id => "search" %></span>
     <span><%#= image_submit_tag "search.png", class: 'searchTag' %></span>
-    <span><%= submit_tag :Search, class: 'searchTag' %></span>
+    <span><%#= submit_tag :Search, class: 'searchTag' %></span>
  
-  <% end %>
-</div>
+  <%# end %>
+</div> -->
 
 <div class="results">
   <div id="spotty">

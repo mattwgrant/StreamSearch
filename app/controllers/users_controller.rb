@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def spotify_albums
+    # @spot_artist_id = params[:id]
     @spotAlbums = Apis::Spotify.lookup(params[:id])
 
     respond_to do |format|
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
   end
 
   def apple_albums
+    # @apple_artist_id = params[:id]
     @appleAlbums = Apis::Itunes.lookup(params[:id])
 
     respond_to do |format|
@@ -40,6 +42,7 @@ class UsersController < ApplicationController
   end
 
   def rhapsody_albums
+    # @rhap_artist_id = params[:id]
     @rhapAlbums = Apis::Rhapsody.lookup(params[:id])
 
     respond_to do |format|

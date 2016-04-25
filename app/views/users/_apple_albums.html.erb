@@ -1,17 +1,19 @@
 <% if @appleAlbums %>
   <% @appleAlbums.each do |appleAlbum| %>
-    <ul>
-      <div class="links">
-        <li id="spotDisplay"><%= appleAlbum["collectionName"] %></li>
-        <% if appleAlbum["collectionId"] %>
-        <li><%= link_to "View Songs", apple_songs_path(appleAlbum["collectionId"]), :remote => true %></li>
-
-      </div>
-        <li><%= image_tag appleAlbum["artworkUrl100"], :class => "album_art" %></li>
-        <li id="<%= appleAlbum["collectionId"]%>"></li>
-       <% end %>
-    </ul>
-         
+    <div class="showAppleAlbum">  
+      <ul>
+        <div class="links">
+          <li id="spotDisplay"><%= appleAlbum["collectionName"] %></li>
+          <% if appleAlbum["collectionId"] %>
+          <li><%= link_to "View Songs", apple_songs_path(appleAlbum["collectionId"]), :remote => true, :class => "appleSongDisplay" %></li>
+        </div>
+        <div class="showSongs">
+          <li><%= image_tag appleAlbum["artworkUrl100"], :class => "album_art" %></li>
+          <li id="<%= appleAlbum["collectionId"]%>"></li>
+         <% end %>
+         </div>
+      </ul>
+    </div> 
   <% end %>
   <%# else %>
     <!-- <li>Sorry, there are no results for this search</li> -->
