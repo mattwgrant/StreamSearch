@@ -1,15 +1,15 @@
 <% if @appleSongs %>
   <% @appleSongs.each do |appleSong| %>
- 
+   <ul>
     <% if appleSong["isStreamable"] == true %>
-    <ul>
+   
       <li><%= appleSong["trackName"] %></li>
-    <%# else %>
-    <!-- <p>Sorry, this is not streaming on Apple Music</p> -->
-    </ul>
-
+    <% elsif appleSong["isStreamable"] == false %>
+      <li>Sorry, this is not streaming on Apple Music</li>
+   
                     
     <% end %>
-    
+    </ul>
   <% end %>
+
 <% end %>

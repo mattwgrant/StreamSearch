@@ -69,6 +69,7 @@ class UsersController < ApplicationController
   end
 
   def rhapsody_songs
+    # @appleSorry = "Sorry, this music is not sreaming on Apple Music"
     @rhap_album_id = params[:id]
     @rhapSongs = Apis::Rhapsody.find(params[:id])
 

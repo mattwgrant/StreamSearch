@@ -26,11 +26,7 @@ class Apis::Spotify
     uri = URI(url)
     response = Net::HTTP.get(uri)
     parsed = JSON.parse(response)
-     # return parsed["artists"]
-    # byebug
-
-
-
   end
+
   private_class_method :get_response
 end
