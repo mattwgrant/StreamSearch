@@ -1,7 +1,5 @@
 <% if @spotAlbums %>
   <% @spotAlbums["items"].each do |spotAlbum| %>
-    <%# if spotAlbum["available_markets"].include?["US"] %>
-    <%# if spotAlbum["US"] %>
     <div class="showSpotAlbum">
       <ul>
         <div class="links"> 
@@ -12,11 +10,9 @@
           <li><%= image_tag spotAlbum["images"][0]["url"], :class => "album_art" %></li>
           <li id="<%= spotAlbum["id"]%>"></li>
         </div>
-        <!-- <li id= "<%#= @spotAlbums["items"].index(spotAlbum) %>"></li> -->
       </ul>
     </div>
-    <%# end %>
   <% end %>
   <%# else %>
-    <!-- <li>Sorry, there are no results for this search</li> -->
+   <!--  <li>Sorry, there are no results for this search</li> -->
 <% end %>
