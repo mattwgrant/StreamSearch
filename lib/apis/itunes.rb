@@ -10,8 +10,7 @@ class Apis::Itunes
     song = "#{@@url}/search?term=#{term}&entity=song"
     
     get_response url
-    # get_response album
-    # get_response song
+  
   end
 
   def self.lookup artistId
@@ -30,8 +29,6 @@ class Apis::Itunes
     response = Net::HTTP.get(uri)
     parsed = JSON.parse(response)
     parsed["results"]
-    # parsed["appleAlbums"]
-    # parsed["appleSongs"]
 
 
 

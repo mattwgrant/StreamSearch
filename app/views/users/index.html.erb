@@ -41,7 +41,7 @@
                 <div class="links">
                   <li id="spotDisplay"><%= spotResult["name"] %></li>
                   <li>
-                  <%= link_to " Show Albums", spotify_albums_path(spotResult["id"]), :remote => true %></li>
+                  <%= link_to "Show Albums", spotify_albums_path(spotResult["id"]), :remote => true, :class => "showSpotAlbums" %></li>
                 </div>
               </ul>  
             </div>

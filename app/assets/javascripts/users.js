@@ -18,3 +18,10 @@ $(document).on('click', '.appleSongDisplay', function setAlbum(album) {
     $('#' + album).show();
   });
 });
+
+// $(document).on('click', '.showSpotAlbums', function setArtist(artist) {
+//   $('.searchResults').click(function(){
+//     $('.searchResults').not(this).hide();
+//     $('#' + artist).show();
+//   })
+// })

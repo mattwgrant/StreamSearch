@@ -7,11 +7,6 @@ require "#{Rails.root}/lib/apis/rhapsody"
 class UsersController < ApplicationController
 
   def index
-   #  if params[:artist_name]
-   #    @artist = RSpotify::Artist.search(params[:artist_name])
-   # # else
-   #  #   redirect_to root_path 
-   #  end
   end
 
   def search
@@ -69,7 +64,6 @@ class UsersController < ApplicationController
   end
 
   def rhapsody_songs
-    # @appleSorry = "Sorry, this music is not sreaming on Apple Music"
     @rhap_album_id = params[:id]
     @rhapSongs = Apis::Rhapsody.find(params[:id])
 
