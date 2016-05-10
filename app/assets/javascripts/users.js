@@ -19,9 +19,23 @@ $(document).on('click', '.appleSongDisplay', function setAlbum(album) {
   });
 });
 
-// $(document).on('click', '.showSpotAlbums', function setArtist(artist) {
-//   $('.searchResults').click(function(){
-//     $('.searchResults').not(this).hide();
-//     $('#' + artist).show();
-//   })
-// })
+$(document).on('click', '.showSpotAlbums', function setArtist(artist) {
+  $('.artistSpotAlbum').click(function(){
+    $('.artistSpotAlbum').not(this).hide();
+    $('#' + artist).show();
+  });
+});
+
+$(document).on('click', '.showAppleAlbums', function setArtist(artist) {
+  $('.artistAppleAlbum').click(function(){
+    $('.artistAppleAlbum').not(this).hide();
+    $('#' + artist).show();
+  });
+});
+
+$(document).on('click', '.showRhapAlbums', function setArtist(artist) {
+  $('.artistRhapAlbum').click(function(){
+    $('.artistRhapAlbum').not(this).hide();
+    $('#' + artist).show();
+  });
+});

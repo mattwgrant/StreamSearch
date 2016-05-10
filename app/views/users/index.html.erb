@@ -36,7 +36,7 @@
       <div class="searchResults">
         <% if @spotResults %>
           <% @spotResults["artists"]["items"].each do |spotResult| %>
-            <div class="artistAlbum">
+            <div class="artistSpotAlbum">
               <ul>
                 <div class="links">
                   <li id="spotDisplay"><%= spotResult["name"] %></li>
@@ -63,11 +63,11 @@
       <div class="searchResults">
         <% if @results %>
           <% @results.each do |result| %>
-            <div class="artistAlbum">
+            <div class="artistAppleAlbum">
               <ul>  
                 <div class="links">
                   <li id="spotDisplay"><%= result["artistName"] %></li>
-                  <li><%= link_to "Show Albums", apple_albums_path(result["artistId"]), :remote => true %></li>
+                  <li><%= link_to "Show Albums", apple_albums_path(result["artistId"]), :remote => true, :class => "showAppleAlbums" %></li>
                 </div>
               </ul>
             </div>
@@ -88,12 +88,12 @@
   <div class="searchResults">
     <% if @rhapResults %>
       <% @rhapResults.each do |rhapResult| %>
-        <div class="artistAlbum">
+        <div class="artistRhapAlbum">
           <ul>
             <div class="links">
               <li id="spotDisplay"><%= rhapResult["name"] %></li>
              <!--  <li><a href="albums/<%#= rhapResult["id"].gsub(/[^0-9]/, '') %>">Albums</a></li> -->
-              <li><%= link_to "Show Albums", rhapsody_albums_path(rhapResult["id"].gsub(/[^0-9]/, '')), :remote => true %></li>
+              <li><%= link_to "Show Albums", rhapsody_albums_path(rhapResult["id"].gsub(/[^0-9]/, '')), :remote => true, :class => "showRhapAlbums" %></li>
             </div>
           </ul>
         </div>
