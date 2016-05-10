@@ -24,12 +24,18 @@ $(document).on('click', '.showSpotAlbums', function setArtist(artist) {
     $('.artistSpotAlbum').not(this).hide();
     $('#' + artist).show();
   });
+  $('.spotAlbums').click(function(){
+    $('.spotAlbums').this.show();
+  });
 });
 
 $(document).on('click', '.showAppleAlbums', function setArtist(artist) {
   $('.artistAppleAlbum').click(function(){
     $('.artistAppleAlbum').not(this).hide();
     $('#' + artist).show();
+  });
+  $('.appleAlbums').click(function(){
+    $('.appleAlbums').this.show();
   });
 });
 
@@ -38,4 +44,8 @@ $(document).on('click', '.showRhapAlbums', function setArtist(artist) {
     $('.artistRhapAlbum').not(this).hide();
     $('#' + artist).show();
   });
+  $('.rhapsodyAlbums').click(function(){
+    $('.rhapsodyAlbums').this.show();
+  });
 });
+

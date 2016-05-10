@@ -33,16 +33,19 @@ body {
 }
 
 #spotifyAlbums {
+  display: none;
   height: 475px;
     overflow: auto;
 }
 
 #appleAlbums {
+  display: none;
   height: 475px;
     overflow: auto;
 }
 
 #rhapsodyAlbums {
+  display: none;
   height: 475px;
     overflow: auto;
 }
