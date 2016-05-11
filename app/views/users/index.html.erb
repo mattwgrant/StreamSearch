@@ -39,13 +39,13 @@
             <div class="artistSpotAlbum">
               <ul>
                 <div class="links">
-                  <li id="spotDisplay"><%= spotResult["name"] %></li>
+                  <li id="nameDisplay"><%= spotResult["name"] %></li>
                   <li>
                   <%= link_to "Show Albums", spotify_albums_path(spotResult["id"]), :remote => true, :class => "showSpotAlbums" %></li>
                 </div>
               </ul>  
             </div>
-            <div id="spotifyAlbums"></div>
+            <div id="spotifyAlbums" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';"></div>
           <% end %>
           <%# else %>
         <!-- <li>Sorry, there are no results for this search</li> -->
@@ -66,12 +66,12 @@
             <div class="artistAppleAlbum">
               <ul>  
                 <div class="links">
-                  <li id="spotDisplay"><%= result["artistName"] %></li>
+                  <li id="nameDisplay"><%= result["artistName"] %></li>
                   <li><%= link_to "Show Albums", apple_albums_path(result["artistId"]), :remote => true, :class => "showAppleAlbums" %></li>
                 </div>
               </ul>
             </div>
-            <div id="appleAlbums"></div>
+            <div id="appleAlbums" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';"></div>
           
           <% end %>
          <!--  <%# else %>
@@ -91,13 +91,13 @@
         <div class="artistRhapAlbum">
           <ul>
             <div class="links">
-              <li id="spotDisplay"><%= rhapResult["name"] %></li>
+              <li id="nameDisplay"><%= rhapResult["name"] %></li>
              <!--  <li><a href="albums/<%#= rhapResult["id"].gsub(/[^0-9]/, '') %>">Albums</a></li> -->
               <li><%= link_to "Show Albums", rhapsody_albums_path(rhapResult["id"].gsub(/[^0-9]/, '')), :remote => true, :class => "showRhapAlbums" %></li>
             </div>
           </ul>
         </div>
-        <div id="rhapsodyAlbums"></div>
+        <div id="rhapsodyAlbums" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">></div>
         
     <% end %>
         <%# else %>
