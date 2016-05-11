@@ -7,8 +7,15 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag "note.png" %>
+  <script type='text/javascript'>
+  window.onload=function(){
+    document.getElementById('top').onclick = function() {
+      document.getElementById('search').focus();
+    };
+  } 
+</script>
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Syncopate">
-   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
 </head>
 <div id="main">
 <body>

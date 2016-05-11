@@ -57,7 +57,7 @@
   <div id="appy">
     <div class="appleResults">
       <div id="apple">
-        <%= image_tag ("apple.png"), :class => "icon" %><strong>Apple Music</strong>
+        <%= image_tag ("apple.png"), :class => "icon" %><strong>Apple Music</strong><a href="#" id="top">Back to Search</a>
       </div>
     </div><br><br><br>
       <div class="searchResults">
@@ -97,7 +97,7 @@
             </div>
           </ul>
         </div>
-        <div id="rhapsodyAlbums" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">></div>
+        <div id="rhapsodyAlbums" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';"></div>
         
     <% end %>
         <%# else %>
@@ -107,5 +107,6 @@
 
   <!-- </div> -->
 </div>
+
 
 

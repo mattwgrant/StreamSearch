@@ -1,3 +1,12 @@
+// $(document).ready(function(){
+//   $(".showSpotAlbums").click(function(){
+//     $('html, body').animate({scrollTop : 1000},500);
+//       return false;
+//   });
+// });
+
+
+
 $(document).on('click', '.rhapSongDisplay', function setAlbum(album) {
   $('.showRhapAlbum').click(function(){
     $('.showRhapAlbum').not(this).hide();
@@ -27,6 +36,10 @@ $(document).on('click', '.showSpotAlbums', function setArtist(artist) {
   $('.spotAlbums').click(function(){
     $('.spotAlbums').this.show();
   });
+  // $(".showSpotAlbums").click(function(){
+  $('html, body').animate({scrollTop : 1000},500);
+      return false;
+  // });
 });
 
 $(document).on('click', '.showAppleAlbums', function setArtist(artist) {
@@ -48,4 +61,9 @@ $(document).on('click', '.showRhapAlbums', function setArtist(artist) {
     $('.rhapsodyAlbums').this.show();
   });
 });
+
+$("a[href='#bottom']").click(function() {
+  $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+  return false;
+})
 
