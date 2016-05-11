@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   post "/search" => "users#search"
 
+  post "/search-songs" => "users#search_songs"
+
+  post "/search-albums" => "users#search_albums"
+
   get "/albums/:id" => "users#show"
 
   get "/albums/songs/:id" => "users#songs"

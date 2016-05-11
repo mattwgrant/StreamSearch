@@ -50,6 +50,8 @@ $(document).on('click', '.showAppleAlbums', function setArtist(artist) {
   $('.appleAlbums').click(function(){
     $('.appleAlbums').this.show();
   });
+  $('html, body').animate({scrollTop : 1000},500);
+      return false;
 });
 
 $(document).on('click', '.showRhapAlbums', function setArtist(artist) {
@@ -60,6 +62,8 @@ $(document).on('click', '.showRhapAlbums', function setArtist(artist) {
   $('.rhapsodyAlbums').click(function(){
     $('.rhapsodyAlbums').this.show();
   });
+  $('html, body').animate({scrollTop : 1000},500);
+      return false;
 });
 
 $("a[href='#bottom']").click(function() {

@@ -18,6 +18,22 @@ class UsersController < ApplicationController
     render "index"
   end
 
+  def search_songs
+    @spotResults = Apis::Spotify.search(params[:query])
+    @results = Apis::Itunes.search(params[:query])
+    @rhapResults = Apis::Rhapsody.search(params[:query])
+
+    render "index"
+  end
+
+  def search_albums
+    @spotResults = Apis::Spotify.search(params[:query])
+    @results = Apis::Itunes.search(params[:query])
+    @rhapResults = Apis::Rhapsody.search(params[:query])
+
+    render "index"
+  end
+
   def spotify_albums
     # @spot_artist_id = params[:id]
     @spotAlbums = Apis::Spotify.lookup(params[:id])

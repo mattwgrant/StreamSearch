@@ -14,6 +14,22 @@
     <span><%= submit_tag :Search, class: 'searchTag' %></span>
  
   <% end %>
+
+
+  <%= form_tag "/search-songs" do %>
+    <span><%= text_field_tag :query, nil, placeholder: 'Search by song...', :id => "search" %></span>
+    <span><%#= image_submit_tag "search.png", class: 'searchTag' %></span>
+    <span><%= submit_tag :Search, class: 'searchTag' %></span>
+ 
+  <% end %>
+
+  <%= form_tag "/search-albums" do %>
+    <span><%= text_field_tag :query, nil, placeholder: 'Search by album...', :id => "search" %></span>
+    <span><%#= image_submit_tag "search.png", class: 'searchTag' %></span>
+    <span><%= submit_tag :Search, class: 'searchTag' %></span>
+ 
+  <% end %>
+
 </div>
 
 <!-- <div class="song-search-bar">
