@@ -1,6 +1,7 @@
 require 'net/http'
 require 'json'
 
+
 class Apis::Itunes
   @@url = "https://itunes.apple.com"
   def self.search term, entity = "", *args

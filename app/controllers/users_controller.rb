@@ -4,6 +4,7 @@ require "#{Rails.root}/lib/apis/rhapsody"
 
 
 
+
 class UsersController < ApplicationController
 
   def index

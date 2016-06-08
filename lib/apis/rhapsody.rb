@@ -1,6 +1,7 @@
 require 'net/http'
 require 'json'
 
+
 class Apis::Rhapsody
   @@url = "https://api.rhapsody.com"
   def self.search query, type = "", *args
