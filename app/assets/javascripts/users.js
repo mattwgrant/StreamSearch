@@ -9,8 +9,8 @@
 
 $(document).on('click', '.rhapSongDisplay', function setAlbum(album) {
   $('.showRhapAlbum').click(function(){
-    $('.showRhapAlbum').not(this).hide();
-    $('#' + album).show();
+    $('.showRhapAlbum').not(this).toggle();
+    $('#' + album).toggle();
   });
 });
 
@@ -56,8 +56,8 @@ $(document).on('click', '.showAppleAlbums', function setArtist(artist) {
 
 $(document).on('click', '.showRhapAlbums', function setArtist(artist) {
   $('.artistRhapAlbum').click(function(){
-    $('.artistRhapAlbum').not(this).hide();
-    $('#' + artist).show();
+    $('.artistRhapAlbum').not(this).toggle();
+    $('#' + artist).toggle();
   });
   $('.rhapsodyAlbums').click(function(){
     $('.rhapsodyAlbums').this.show();
