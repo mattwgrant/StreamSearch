@@ -6,7 +6,7 @@ class Apis::Spotify
 
   def self.search query, type = "", *args
     url = "#{@@url}/v1/search?query=#{query}&offset=0&limit=20&type=artist&market=US"
-    # album = "#{@@url}/v1/search?query=#{query}&offset=0&limit=20&type=album"
+    album = "#{@@url}/v1/search?query=#{query}&offset=0&limit=20&type=album"
     song = "#{@@url}/v1/search?query=#{query}&offset=0&limit=20&type=track"
     get_response url
   end

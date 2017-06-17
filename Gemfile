@@ -30,6 +30,8 @@ gem 'rspotify'
 # gem 'unicorn'
 gem 'json'
 
+gem 'rest-client'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
